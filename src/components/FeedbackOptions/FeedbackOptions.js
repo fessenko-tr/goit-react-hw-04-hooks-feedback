@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
+import React from "react";
 import s from "./FeedbackOptions.module.css";
+
 function FeedbackOptions({ options, onLeaveFeedback }) {
   const buttonsSet = options.map((e) => (
     <button
       className={s.btn}
       onClick={() => {
-        onLeaveFeedback(e.toLowerCase());
+        onLeaveFeedback({ button: e.toLowerCase(), payload: 1 });
       }}
       key={e}
     >
